@@ -1,0 +1,10 @@
+<%= @posts.each do |post| %>
+<div>
+  <%= link_to post_path(post.id) do %>
+    <p><%= image_tag('bike1.jpg') %> </p>
+  <% end %>
+    <P>タイトル:<%= post.post_name %> </P>
+    <p>本文:<%= post.caption %>　</p>
+    <p><%= post.user.name %></p>
+</div>
+<% end %>

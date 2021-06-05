@@ -1,0 +1,39 @@
+<div class="box2">
+  <div class="box2-inner">
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <h2>新規登録</h2>
+      <div class="box2-email">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="box2-password">
+        <div class="b-row">
+          <div class="colum2">
+            <%= f.label :password,"パスワード" %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %>文字以上)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="box-password-confirmation">
+        <%= f.label :password_confirmation, "パスワードの確認" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "新規登録" %>
+      </div>
+    <% end %>
+    <div class="box-usr">
+      <p><span>----------</span>Bikersのアカウントを既にお持ちの方<span>----------</span></p>
+      <%= link_to"ログイン", user_session_path %>
+    </div>
+
+  </div>
+</div>
+
