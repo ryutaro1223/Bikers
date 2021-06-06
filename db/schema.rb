@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_05_072748) do
+ActiveRecord::Schema.define(version: 2021_06_06_051623) do
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.text "instruction"
+    t.datetime "created_at", null: false
+    t.datetime "update_at"
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "post_name"
     t.string "image_id"
     t.text "caption"
     t.integer "user_id"
+    t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

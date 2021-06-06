@@ -1,0 +1,22 @@
+＊ {
+  margin: 0;
+  padding: 0;
+  
+}
+.main {
+  background-image: url(https://www.yamaha-motor.co.jp/mc/life/55mph/photo/img/006/img_point_01.jpg);
+  height: 800px;
+  background-size:cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+h1 {
+ color:white;
+ text-align: center;
+}
+
+strong {
+  font-size: 120px;
+  font-family: 'Lobster', cursive;
+}

@@ -1,0 +1,16 @@
+<h1>ジャンルの作成</h1>
+<%= form_with(model: @genre, local: true) do |f| %>
+<div>
+  <%= f.label :name, "ジャンル名" %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :instruction, "説明" %>
+  <%= f.text_area :instruction %>
+</div>
+
+<div>
+  <%= f.submit "作成", data: { confirm: '上記の内容でジャンルを作成します。よろしいでしょうか？' } %>
+</div>
+ <% end %>

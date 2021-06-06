@@ -1,10 +1,23 @@
-<div class="post-body">
+<div class="post-show">
   <%= attachment_image_tag @post, :image %>
-  <p><%= @post.post_name %></p>
-  <p><%= @post.caption %></p>
-  <p><%= @post.user.name %></p>
-  <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @post.user == current_user %>
+  <div class="post-time">
+    <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+  </div>
+  
+  <div class="post-name">
+    <p><%= @post.post_name %></p>
+  </div>
+  
+  <div class="post-caption">
+    <p><%= @post.caption %></p>
+  </div>
+  
+  <div class="post-usr-name">
+    <p><%= @post.user.name %></p>
+  </div>
+
+  <div class="post-delete"><% if @post.user == current_user %>
     <%= link_to "削除", post_path(@post), method: :delete %>
   <% end %>
+  </div>
 </div>
