@@ -1,3 +1,13 @@
-.post-new h1{
-  color: #000;
+.post-new {
+  margin: auto;
+  text-align: center;
+  border: 1px #000 solid;
 }
+.post-new h1{
+  color: #fff;
+}
+
+.post-new h4{
+  color: #fff;
+}
+

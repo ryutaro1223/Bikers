@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bikers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,34 +9,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
-      
       <% if user_signed_in? %>
-      <nav>
+      <nav class="navbar navbar-expand-md  navbar-light bg-light">
         <ul class="nav-list">
           <li class="nav-list-item">
-            <%= link_to 'ジャンル一覧', genres_path %>
+            <a class="nav-link0" href="/genres">ジャンル一覧</a>
           </li>
           <li class="nav-list-item">
-            <%= link_to '投稿一覧', posts_path %>
+            <a class="nav-link1" href="/posts">投稿一覧</a>
           </li>
           <li class="nav-list-item">
-            <%= link_to '新規投稿', new_post_path %>
+            <a class="nav-link2" href="/posts/new">新規投稿</a>
           </li>
           <li class="nav-list-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <a class="nav-link3" data-method="delete" href="/users/sign_out">ログアウト</a>
           </li>
         <% else %>
           <li class="nav-list-item">
-            <%= link_to "新規登録", new_user_registration_path %>
+            <a class="nav-link4" href="/users/sign_up">新規登録</a>
           </li>
           <li class="nav-list-item">
-            <%= link_to "ログイン", new_user_session_path %>
+            <a class="nav-link5" href="/users/sign_in">ログイン</a>
           </li>
         </ul>
-        </nav>
-        <% end %>
-        <%= yield %>
-      
+      </nav>
+      <% end %>
+      <%= yield %>
   </body>
+  <footer>
+    <h5>©All Right Rserverd Bikers</h5>
+  </footer>
 </html>

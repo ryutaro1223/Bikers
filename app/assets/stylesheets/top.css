@@ -17,6 +17,10 @@ h1 {
 }
 
 strong {
-  font-size: 120px;
+  font-size: 140px;
   font-family: 'Lobster', cursive;
+}
+
+h5 {
+  color: #fff
 }

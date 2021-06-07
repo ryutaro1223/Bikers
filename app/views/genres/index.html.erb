@@ -1,7 +1,9 @@
-<h1>ジャンル一覧</h1>
-<%= @genres.each do |genre| %>
-<div>
-  <p>ジャンル名:<%= genre.name %></p>
-  <p>説明<%= genre.instruction %></p>
+<div class="genre-index">
+  <h1>ジャンル一覧</h1>
+  <%= @genres.each do |genre| %>
+  <div>
+    <p>ジャンル名:<%= genre.name %></p>
+    <p>説明<%= genre.instruction %></p>
+  </div>
+  <% end %>
 </div>
-<% end %>
