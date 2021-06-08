@@ -24,7 +24,7 @@
             <a class="nav-link2" href="/posts/new">新規投稿</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link3" data-method="delete" href="/users/sign_out">ログアウト</a>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link3" %>
           </li>
         <% else %>
           <li class="nav-list-item">
@@ -34,11 +34,12 @@
             <a class="nav-link5" href="/users/sign_in">ログイン</a>
           </li>
         </ul>
-      </nav>
       <% end %>
+      </nav>
       <%= yield %>
+  　<footer>
+      <h5>©All Right Rserverd Bikers</h5>
+    </footer>
   </body>
-  <footer>
-    <h5>©All Right Rserverd Bikers</h5>
-  </footer>
+  
 </html>

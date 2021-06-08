@@ -1,4 +1,9 @@
 .genre-index {
   color:#000;
   text-align: center;
+  border: 1px #000 solid;
+}
+
+.genre-index h1 {
+  color: #000;
 }

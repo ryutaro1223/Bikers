@@ -1,18 +1,21 @@
 <div class="post-index">
-  <%= @posts.each do |post| %>
+  <% @posts.each do |post| %>
   <div class="post-show2">
-   <div class="post-image">
-     <%= link_to post_path(post.id) do %>
-      <p><%= image_tag('bike1.jpg') %> </p>
-    <% end %>
-   </div>
-      <div class="post-title">
-        <P>タイトル:<%= post.post_name %> </P>
-      </div>
-      <div class="post-cap">
-        <p>本文:<%= post.caption %> </p>
-      </div>
-      <div class="post-usr-name" <p><%= post.user.name %> </p>
+     <div class="post-image">
+       <%= link_to post_path(post.id) do %>
+       <p>画像:<% post.image %></p>
+      <% end %>
+     </div>
+        <div class="post-usr-name">
+          <p>投稿者:<%= post.user.name %> </p>
+        </div>
+        <div class="post-title">
+          <P>タイトル:<%= post.post_name %> </P>
+        </div>
+        <div class="post-cap">
+          <p>本文:<%= post.caption %> </p>
+        </div>
+        
   </div>
   <% end %>
 </div>
