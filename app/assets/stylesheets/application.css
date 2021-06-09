@@ -62,7 +62,8 @@ footer {
   width: 100%
 }
 
-h5 {
+footer h5 {
+  color: #fff;
   font-size: 20px;
   margin-top: 0;
   height: 50px;

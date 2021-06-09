@@ -1,0 +1,24 @@
+＊ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about {
+  height: 900px;
+  background-image: url(https://www.subablobike.jp/wp-content/uploads/2020/01/8D49D460-A9CD-4A01-B58B-E6F83EA192DA-640x720-1-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.about-sentence strong {
+  color: #fff;
+}
+
+.about-cap {
+  margin-top: 250px;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  text-align: center;
+  color: #fff;
+  font-size: 18px
+}

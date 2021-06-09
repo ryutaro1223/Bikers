@@ -11,7 +11,7 @@
   margin: 0 auto;
 }
 
-h1 {
+.main h1 {
  text-align: center;
 }
 
@@ -21,6 +21,6 @@ strong {
   font-family: 'Lobster', cursive;
 }
 
-h5 {
+.main h5 {
   color: #fff
 }
