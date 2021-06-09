@@ -1,0 +1,9 @@
+<div>
+  <p>ジャンル名<%= @genre.name%></p>
+</div>
+<div>
+  <p><%= @genre.instruction %></p>
+</div>
+<div>
+  <p><%= link_to "削除", genre_path(@genre), method: :delete %></p>
+</div>

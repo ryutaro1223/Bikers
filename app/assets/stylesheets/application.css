@@ -41,7 +41,8 @@ nav {
   margin: auto;
 }
 
-.nav-link0, .nav-link1, .nav-link2, .nav-link3, .nav-link4, .nav-link5 {
+.nav-link0, .nav-link1, .nav-link2, .nav-link3, .nav-link4, .nav-link5, .nav-link6,
+.nav-link7, .nav-link8 {
   margin-left: 0;
   border: solid 2px #BBBBBB;
   border-radius: 4px;

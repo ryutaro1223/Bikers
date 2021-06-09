@@ -6,10 +6,10 @@
 
 .post-show {
   width: 400px;
-  height: 450px;
-  margin: 60px auto 0;
-  border-radius: 4px;
+  margin-left: 280px;
   border: 1px #ddd solid;
+  margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 .post-name, .post-caption, .post-usr-name {
@@ -17,7 +17,10 @@
   text-align: center;
   font-size: 15px;
   color: #767676;
-  margin-bottom: 14px;
+}
+
+.post-show2 {
+  border: none;
 }
 
 .post-time {
@@ -29,5 +32,4 @@
 .post-delete {
   text-align: right;
   font-size: 10px;
-  margin-top: 30px;
 }

@@ -1,11 +1,11 @@
 ＊ {
   margin: 0;
   padding: 0;
-
+  box-sizing: border-box;
 }
 .main {
   background-image: url(https://www.yamaha-motor.co.jp/mc/life/55mph/photo/img/006/img_point_01.jpg);
-  height: 800px;
+  height: 900px;
   background-size:cover;
   background-position: center;
   margin: 0 auto;

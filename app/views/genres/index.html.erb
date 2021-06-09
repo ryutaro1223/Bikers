@@ -3,9 +3,12 @@
     <% @genres.each do |genre| %>
     <div class="genre-index2">
       <div class="genre-index3">
-        <p>ジャンル名:<%= genre.name %></p>
-        <p>説明:<%= genre.instruction %></p>
+        <%= link_to genre_path(genre.id) do %>
+         <p>ジャンル名:<%= genre.name %></p>
+        <% end %>
+         <p>説明:<%= genre.instruction %></p>
       </div>
     </div>
     <% end %>
+    <p><%= link_to "ジャンル追加", new_genre_path %></p>
 </div>

@@ -24,14 +24,23 @@
             <a class="nav-link2" href="/posts/new">新規投稿</a>
           </li>
           <li class="nav-list-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link3" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link3" %>
+          </li>
+          <li class="nav-list-item">
+            <%= link_to"マイページ",user_path(current_user.id), class:"nav-link4" %>
           </li>
         <% else %>
           <li class="nav-list-item">
-            <a class="nav-link4" href="/users/sign_up">新規登録</a>
+            <a class="nav-link5" href="/users/sign_up">新規登録</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link5" href="/users/sign_in">ログイン</a>
+            <a class="nav-link6" href="/users/sign_in">ログイン</a>
+          </li>
+          <li　class="nav-list-item">
+            <a class="nav-link7" href="home/about">サイト概要</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-link8" href="/">トップページ</a>
           </li>
         </ul>
       <% end %>
@@ -41,5 +50,5 @@
       <h5>©All Right Rserverd Bikers</h5>
     </footer>
   </body>
-  
+
 </html>
