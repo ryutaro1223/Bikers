@@ -7,18 +7,18 @@
 .post-index {
   width: 400px;
   margin: 60px auto 0;
-  border-radius: 4px;
-  border: 1px #ddd solid;
+  
 }
 
 .post-show2 {
-
   justify-content: center;
   width: 400px;
   text-align: center;
   font-size: 15px;
   color: #767676;
   margin-bottom: 14px;
+  border-radius: 4px;
+  border: 1px #ddd solid;
 }
 
 .post-image{
