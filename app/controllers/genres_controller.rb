@@ -15,7 +15,7 @@ class GenresController < ApplicationController
   def show
     @genre = Genre.find(params[:id])
   end
-  
+
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
@@ -23,6 +23,6 @@ class GenresController < ApplicationController
   end
 
   def genre_params
-    params.permit(:name, :instruction)
+    params.require(:genre).permit(:name, :instruction)
   end
 end
