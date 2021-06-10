@@ -21,12 +21,9 @@
 
 
 
-nav {
-  width: 100%;
-  margin: 0 auto;
-  flex-direction: column;
-  color: #fff;
-  transition: .3s;
+.navbar {
+  margin-bottom: 0;
+  min-height: 0;
 }
 
 .nav-list {
@@ -45,7 +42,7 @@ nav {
 .nav-link7, .nav-link8 {
   margin-left: 0;
   border: solid 2px #BBBBBB;
-  border-radius: 4px;
+  border-radius: 4px;  /*角を丸くする*/
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
   background-color: #BBBBBB;
@@ -66,8 +63,29 @@ footer h5 {
   color: #fff;
   font-size: 20px;
   margin-top: 0;
-  height: 50px;
   text-align: center;
-  padding-top: 30px;
+  /*padding-top: 15px;*/
   font-family: 'Lobster', cursive;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.pagination {
+  margin: auto;
+  padding-left: 330px;
 }

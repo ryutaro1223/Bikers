@@ -4,9 +4,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!--Bootstrap css読み込みコード追加-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Bpptstrap Javascript読み込みコード追加-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
 
@@ -24,7 +27,7 @@
             <a class="nav-link2" href="/posts/new">新規投稿</a>
           </li>
           <li class="nav-list-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link3" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class:"nav-link3" %>
           </li>
           <li class="nav-list-item">
             <%= link_to"マイページ",user_path(current_user.id), class:"nav-link4" %>
@@ -37,7 +40,7 @@
             <a class="nav-link6" href="/users/sign_in">ログイン</a>
           </li>
           <li　class="nav-list-item">
-            <a class="nav-link7" href="home/about">サイト概要</a>
+            <a class="nav-link7" href="/home/about">サイト概要</a>
           </li>
           <li class="nav-list-item">
             <a class="nav-link8" href="/">トップページ</a>
