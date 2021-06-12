@@ -1,4 +1,4 @@
 class GenrePost < ApplicationRecord
   belongs_to :genre
-  belongs_to :
+  belongs_to :post
 end
