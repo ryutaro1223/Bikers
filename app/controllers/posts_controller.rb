@@ -28,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_name, :image, :caption)
+    params.require(:post).permit(:post_name, :image, :caption, { genre_ids: []})
   end
 end

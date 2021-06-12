@@ -2,7 +2,8 @@
  <h1>新規投稿</h1>
 <%= form_with model: @genre, local: true do |f| %>
  <h4>ジャンル</h4>
- <%= f.text_field :name %>
+ <%= f.select :name, {'ネイキッド': 1, 'スーパースポーツ': 2, 'ストリートファイター':3, 'オフロード':4, 'ストリート':5, 'クラシック':6,
+ 'クルーザー':7, 'ツアラー':8, 'ミニバイク':9, 'スクーター':10}, { include_blank: '選択してください'} %>
 <% end %>
 <%= form_with model: @post, local: true do |f| %>
  <h4>画像</h4>
