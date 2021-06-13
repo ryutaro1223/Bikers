@@ -32,14 +32,13 @@
   margin: 0 auto;
 }
 
-.nav-list-item {
+.nav-list li {
   list-style: none;
   display: inline-block;
   margin: auto;
 }
 
-.nav-link0, .nav-link1, .nav-link2, .nav-link3, .nav-link4, .nav-link5, .nav-link6,
-.nav-link7, .nav-link8 {
+.nav-list a{
   margin-left: 0;
   border: solid 2px #BBBBBB;
   border-radius: 4px;  /*角を丸くする*/
