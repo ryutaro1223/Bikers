@@ -1,3 +1,9 @@
+＊{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .post-new {
   margin: auto;
   text-align: center;
@@ -10,4 +16,6 @@
 .post-new h4{
   color: #fff;
 }
+
+
 

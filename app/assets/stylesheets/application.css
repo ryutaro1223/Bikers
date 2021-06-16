@@ -32,7 +32,7 @@
   margin: 0 auto;
 }
 
-.nav-list li {
+.nav-list li{
   list-style: none;
   display: inline-block;
   margin: auto;
@@ -40,7 +40,7 @@
 
 .nav-list a{
   margin-left: 0;
-  border: solid 2px #BBBBBB;
+  /*border: solid 2px #BBBBBB;*/
   border-radius: 4px;  /*角を丸くする*/
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
@@ -63,7 +63,7 @@ footer h5 {
   font-size: 20px;
   margin-top: 0;
   text-align: center;
-  /*padding-top: 15px;*/
+  padding: 25px;
   font-family: 'Lobster', cursive;
 }
 

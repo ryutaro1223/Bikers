@@ -19,3 +19,7 @@
 .genre-index3 {
   display: inline-block;
 }
+
+.genre-index3 p {
+  color: #000;
+}

@@ -5,6 +5,7 @@ class CreateGenres < ActiveRecord::Migration[5.2]
       t.text :instruction
       t.datetime :created_at
       t.datetime :update_at
+      
 
       t.timestamps
     end

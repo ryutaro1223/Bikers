@@ -1,24 +1,28 @@
-<div class="post-new">
- <h1>新規投稿</h1>
-<%= form_with model: @genre, local: true do |f| %>
- <h4>ジャンル</h4>
- <%= f.select :name, {'ネイキッド': 1, 'スーパースポーツ': 2, 'ストリートファイター':3, 'オフロード':4, 'ストリート':5, 'クラシック':6,
- 'クルーザー':7, 'ツアラー':8, 'ミニバイク':9, 'スクーター':10}, { include_blank: '選択してください'} %>
-<% end %>
-<%= form_with model: @post, local: true do |f| %>
- <h4>画像</h4>
- <%= f.attachment_field :image %>
- <h4>ジャンル</h4>
- <%= f.label :genre%>
- <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name ) do |genre|%>
-  <%= genre.label do %>
-   <%= genre.check_box %>
-  <% end %>
- <% end %>
- <h4>タイトル</h4>
- <%= f.text_field :post_name %>
- <h4>本文</h4>
- <%= f.text_area :caption, size: "20x15" %>
- <%= f.submit '投稿' %>
-<% end %>
+<!--<div class="container-fluid">-->
+ <div class="row">
+   <div class="post-new">
+    <h1>新規投稿</h1>
+   <%= form_with model: @genre, local: true do |f| %>
+    <h4>ジャンル</h4>
+    <%= f.select :name, {'ネイキッド': 1, 'スーパースポーツ': 2, 'ストリートファイター':3, 'オフロード':4, 'ストリート':5, 'クラシック':6,
+    'クルーザー':7, 'ツアラー':8, 'ミニバイク':9, 'スクーター':10}, { include_blank: '選択してください'} %>
+   <% end %>
+   <%= form_with model: @post, local: true do |f| %>
+    <h4>画像</h4>
+    <%= f.attachment_field :image %>
+    <h4>ジャンル</h4>
+    <%= f.label :genre%>
+    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name ) do |genre|%>
+     <%= genre.label do %>
+      <%= genre.check_box %>
+     <% end %>
+    <% end %>
+    <h4>タイトル</h4>
+    <%= f.text_field :post_name %>
+    <h4>本文</h4>
+    <%= f.text_area :caption, size: "20x15" %>
+    <%= f.submit '投稿' %>
+   <% end %>
+   </div>
+ </div>
 </div>
