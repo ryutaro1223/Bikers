@@ -1,7 +1,5 @@
 .genre-index {
   color:#000;
-
-
 }
 
 .genre-index h1 {
@@ -10,7 +8,7 @@
 
 .genre-index2 {
   display: inline-flex;
-  border: 1px #000 solid;
+  /*border: 1px #000 solid;*/
   width: 280px;
   height: 250px;
   margin-bottom: 5px;
