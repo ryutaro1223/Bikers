@@ -8,3 +8,9 @@ h1 {
 h1, h2 {
   text-align: center;
 }
+.profile_image {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;  /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+}

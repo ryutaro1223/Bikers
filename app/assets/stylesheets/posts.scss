@@ -11,3 +11,9 @@
   background: linear-gradient(#f7797d,#fbd786,#c6ffdd);
   }
 
+.post-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

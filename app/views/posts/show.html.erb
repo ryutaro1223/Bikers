@@ -8,6 +8,24 @@
       #<%= genre.name %>
     <% end %>
 
+    <% if @post.favorited_by?(current_user) %>
+      <p>
+        <%= link_to post_favorites_path(@post), method: :delete do %>
+          💙<%= @post.favorites.count %>いいね
+        <% end %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to post_favorites_path(@post), method: :post do %>
+          🤍<%= @post.favorites.count %>いいね
+        <% end %>
+      </p>
+    <% end %>
+
+    <div class="post-img">
+      <%= attachment_image_tag @post.user, :profile_image, size:"30x30", fallback: "no-img.jpg" %>
+    </div>
+
     <div class="post-name">
       <p><%= @post.post_name %></p>
     </div>

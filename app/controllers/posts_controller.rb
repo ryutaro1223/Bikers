@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-   
+
   end
 
   def create
@@ -20,6 +20,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = current_user.comments.new
+    @favorites = @post.favorites
+
   end
 
   def destroy
