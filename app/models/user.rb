@@ -10,4 +10,23 @@ class User < ApplicationRecord
   validates :name,
   uniqueness: { case_sensitive: :false },
   length: { minimum: 2, maximum: 20 }
+  # フォロー機能のアソシエーション
+  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id', dependent: :destroy
+  has_many :followers, through: :reverse_of_relationships, source: :follower
+  
+  has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :followings, through: :relationships, source: :followed
+  
+  def follow(user_id)
+    relationships.create(followed_id: user.id)
+  end
+  
+  def unfollow(user_id)
+    relationships.find_by(followed_id: user.id).destroy
+  end
+  
+  def following?(user)
+    followings.include?(user)
+  end
+ 
 end

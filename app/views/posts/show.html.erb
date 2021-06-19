@@ -8,6 +8,10 @@
       #<%= genre.name %>
     <% end %>
 
+    <div class="post-img">
+      <%= attachment_image_tag @post.user, :profile_image, size:"30x30", fallback: "no-img.jpg" %>
+    </div>
+
     <% if @post.favorited_by?(current_user) %>
       <p>
         <%= link_to post_favorites_path(@post), method: :delete do %>
@@ -22,9 +26,7 @@
       </p>
     <% end %>
 
-    <div class="post-img">
-      <%= attachment_image_tag @post.user, :profile_image, size:"30x30", fallback: "no-img.jpg" %>
-    </div>
+
 
     <div class="post-name">
       <p><%= @post.post_name %></p>
@@ -42,7 +44,7 @@
       <%= form_with(model: [@post, @comment], method: :post) do |f| %>
       <%= f.text_area :comment_content %>
       <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.submit 'コメント送信' %>
+      <%= f.submit '送信' %>
       <% end %>
     </div>
 
