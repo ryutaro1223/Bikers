@@ -9,6 +9,10 @@ class Post < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+  
+  def self.search(keyword)
+    where(["post_name like? OR caption like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 
   accepts_nested_attributes_for :genre_posts, allow_destroy: true
   attachment :image

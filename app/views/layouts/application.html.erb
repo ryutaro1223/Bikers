@@ -15,7 +15,7 @@
 
   <body>
       <% if user_signed_in? %>
-      <nav class="navbar navbar-expand-md  navbar-light bg-light">
+      <nav>
         <ul class="nav-list">
           <li><a href="/genres">ジャンル一覧</a></li>
           <li><a href="/posts">投稿一覧</a></li>
@@ -26,6 +26,7 @@
           <li>
             <a><%= link_to"マイページ",user_path(current_user.id) %></a>
           </li>
+          <li><a href="/users">Bikers</a></li>
          <% else %>
           <li><a href="/users/sign_up">新規登録</a></li>
           <li><a href="/users/sign_in">ログイン</a></li>

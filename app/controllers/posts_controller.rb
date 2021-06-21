@@ -30,9 +30,15 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:post_name, :image, :caption, { genre_ids: []})
+    params.require(:post).permit(:post_name, :image, :caption, :keyword, { genre_ids: []})
   end
 end
