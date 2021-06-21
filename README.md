@@ -7,7 +7,7 @@
 バイクに興味を持ってもらう・趣味の共有
 
 ### テーマを選んだ理由
-バイクに乗る人が増えていく中で、若者に興味を持ってもらいたい
+バイクに乗る人が増えていく中で、もっと若者に興味を持ってもらいたい
 
 ### ターゲットユーザ
 バイクに興味がある人・好きな人　一般ユーザー向け
@@ -30,4 +30,4 @@ https://docs.google.com/spreadsheets/d/1Pxu-nds5NGVM_MV6a6dLXUe3VfvFu-RjZRFMxgjl
 - IDE：Cloud9
 
 ## 使用素材
-現時点どこから写真を引用するか未定
+https://www.pexels.com/ja-jp/
