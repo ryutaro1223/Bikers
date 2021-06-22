@@ -11,8 +11,20 @@
   margin: 0 auto;
 }
 
+@media screen and (min-width:375px) and (max-width:768px) {
+  .main {
+    background-size: contain;
+    height: 250px;
+  }
+
+  .main strong {
+    font-size: 50px;
+  }
+}
+
 .main h1 {
  text-align: center;
+ margin-top: 0;
 }
 
 strong {

@@ -1,6 +1,9 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.profile-container {
+  height: 45px;
+}
 h1 {
   color: #000;
 }
@@ -13,4 +16,24 @@ h1, h2 {
   width: 100px;
   height: 100px;
   object-fit: cover;  /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+}
+
+.profile-name {
+  color: #fff;
+  margin-top: 0;
+}
+
+.show-main {
+  background-image: image-url('landscape10.jpg');
+  background-size:cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+.post-index2 {
+  background-color: #fff;
+}
+
+.post-index {
+  margin-top: 0;
 }

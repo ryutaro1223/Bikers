@@ -10,31 +10,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--Bpptstrap Javascript読み込みコード追加-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   </head>
 
 
   <body>
-      <% if user_signed_in? %>
       <nav>
         <ul class="nav-list">
-          <li><a href="/genres">ジャンル一覧</a></li>
-          <li><a href="/posts">投稿一覧</a></li>
-          <li><a href="/posts/new">新規投稿</a></li>
-          <li>
-            <a><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></a>
-          </li>
-          <li>
-            <a><%= link_to"マイページ",user_path(current_user.id) %></a>
-          </li>
-          <li><a href="/users">Bikers</a></li>
-         <% else %>
-          <li><a href="/users/sign_up">新規登録</a></li>
-          <li><a href="/users/sign_in">ログイン</a></li>
-          <li><a href="/home/about">サイト概要</a></li>
-          <li><a href="/">トップページ</a></li>
+        <% if user_signed_in? %>
+
+
+            <li><a href="/genres">ジャンル一覧</a></li>
+            <li><a href="/posts">投稿一覧</a></li>
+            <li><a href="/posts/new">新規投稿</a></li>
+            <li>
+              <a><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></a>
+            </li>
+            <li>
+              <a><%= link_to"マイページ",user_path(current_user.id) %></a>
+            </li>
+            <li><a href="/users">Bikers</a></li>
+        <% else %>
+            <li><a href="/home/about">サイト概要</a></li>
+            <li><a href="/">トップページ</a></li>
+            <li><a href="/users/sign_up">新規登録</a></li>
+            <li><a href="/users/sign_in">ログイン</a></li>
+
+
+        <% end %>
         </ul>
       </nav>
-      <% end %>
       <%= yield %>
   　<footer>
       <h5>©All Right Rserverd Bikers</h5>

@@ -10,7 +10,7 @@
 
      <div class="post-image">
        <%= link_to post_path(post.id) do %>
-       <p><%= attachment_image_tag @post, :image, size: "400x370", format:'jpg', fallback:"no-img.jpg" %></p>
+       <p><%= attachment_image_tag post, :image, size: "400x370", format:'jpg', fallback:"no-img.jpg" %></p>
       <% end %>
      </div>
         <div class="post-img">

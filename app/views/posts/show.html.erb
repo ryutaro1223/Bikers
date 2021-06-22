@@ -26,7 +26,9 @@
       </p>
     <% end %>
 
-
+    <div class="post-usr-name">
+      <p><%= @post.user.name %></p>
+    </div>
 
     <div class="post-name">
       <p><%= @post.post_name %></p>
@@ -36,9 +38,7 @@
       <p><%= @post.caption %></p>
     </div>
 
-    <div class="post-usr-name">
-      <p><%= @post.user.name %></p>
-    </div>
+
 
     <div class="post-comment">
       <%= form_with(model: [@post, @comment], method: :post) do |f| %>

@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   def index
     # ページネーションを追加
     @posts = Post.all.page(params[:page]).per(5)
+    # @post = Post.search(params[:search])
+   
   end
 
   def show
