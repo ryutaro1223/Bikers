@@ -8,12 +8,21 @@
 }
 
 .post-new {
-  background: linear-gradient(#f7797d,#fbd786,#c6ffdd);
+  background-image: image-url('landscape9.jpg');
+  background-size:cover;
+  background-position: center;
   }
+
 
 .post-img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
   object-fit: cover;
+}
+
+.index-all {
+  background-image: image-url('landscape11.jpg');
+  background-size:cover;
+  background-position: center;
 }
