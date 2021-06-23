@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2021_06_21_094354) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email", null: false
-    t.integer "subject", default: 0, null: false
     t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_094354) do
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "post_id"], name: "index_favorites_on_user_id_and_post_id", unique: true
   end
 
   create_table "genre_posts", force: :cascade do |t|

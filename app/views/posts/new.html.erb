@@ -1,12 +1,14 @@
-<!--<div class="container-fluid">-->
+<div class="container-fluid">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+ </head>
  <div class="row">
    <div class="post-new">
-    
-    <h1>新規投稿</h1>
+    <h1>New Post</h1>
    <%= form_with model: @post, local: true do |f| %>
-     <h4>画像</h4>
-     <ul><%= f.attachment_field :image %></ul>
-     <h4>ジャンル</h4>
+     <h4>Picture</h4>
+     <p><%= f.attachment_field :image, placeholder: "画像選択" %></p>
+     <h4>Jenre</h4>
      <%= form_with model: @genre, local: true do |f| %>
       <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name ) do |genre|%>
          <%= genre.label do %>
@@ -14,9 +16,9 @@
          <% end %>
       <% end %>
      <% end %>
-    <h4>タイトル</h4>
+    <h4>Title</h4>
     <%= f.text_field :post_name %>
-    <h4>本文</h4>
+    <h4>Caption</h4>
     <%= f.text_area :caption, size: "20x15" %>
     <%= f.submit '投稿' %>
    <% end %>

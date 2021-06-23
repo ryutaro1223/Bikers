@@ -12,10 +12,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    # ページネーションを追加
-    @posts = Post.all.page(params[:page]).per(5)
-    # @post = Post.search(params[:search])
-   
+  # ページネーションを追加
+  @posts = Post.all.page(params[:page]).per(5)
+  # @post = Post.search(params[:search])
+  # @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
   end
 
   def show

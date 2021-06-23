@@ -5,10 +5,8 @@
   <h1>ALL Bikers</h1>
   <ul class="users">
     <% @users.each do |user| %>
-      <li>
-        <%= attachment_image_tag @user, :profile_image, size: "60x60", format: 'jpeg', fallback: "no-img.jpg" %>
-        <%= link_to user.name, user %>
-      </li>
+      <%= attachment_image_tag user, :profile_image, size: "30x30", format: 'jpg', fallback: "no-img.jpg" %>
+      <%= link_to user.name, user %>
     <% end %>
   </ul>
 </div>

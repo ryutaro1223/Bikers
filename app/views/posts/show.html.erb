@@ -1,4 +1,8 @@
 <div class="post-show">
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+  </head>
   <%= attachment_image_tag @post, :image, size: "400x370", format:'jpg', fallback:"no-img.jpg" %>
   <div class ="post-show2">
     <div class="post-time">
@@ -14,14 +18,16 @@
 
     <% if @post.favorited_by?(current_user) %>
       <p>
-        <%= link_to post_favorites_path(@post), method: :delete do %>
-         <%= @post.favorites.count %>💙
+        <%= link_to post_favorites_path(@post), method: :delete, remote: true do %>
+         <span style="color: #ff1493"><i class="fa fa-heart faa-pulse animated faa-slow"></i></span>
+         <%= @post.favorites.count %>人
         <% end %>
       </p>
     <% else %>
       <p>
-        <%= link_to post_favorites_path(@post), method: :post do %>
-          <%= @post.favorites.count %>🤍
+        <%= link_to post_favorites_path(@post), method: :post, remote: true do %>
+          <span style="color: #ffb6c1"><i class="fa fa-heart"></i></span>
+          <%= @post.favorites.count %>人
         <% end %>
       </p>
     <% end %>
