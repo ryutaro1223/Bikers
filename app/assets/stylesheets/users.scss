@@ -21,6 +21,8 @@ h1, h2 {
 .profile-name {
   color: #fff;
   margin-top: 0;
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
 }
 
 .show-main {
@@ -49,6 +51,7 @@ h1, h2 {
 }
 
 .users {
+  text-align: center;
   display: block;
   margin: 5px;
   padding: 10px;
@@ -58,3 +61,4 @@ h1, h2 {
 .users p {
   display: inline-block;
 }
+

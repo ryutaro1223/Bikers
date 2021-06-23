@@ -1,5 +1,6 @@
 <div class="genre-index">
   <head>
+    <link rel="stylesheet" href="genres.scss" />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   </head>
     <h1>Jenres</h1>
@@ -9,7 +10,7 @@
         <%= link_to genre_path(genre.id) do %>
          <p>ジャンル名:<%= genre.name %></p>
         <% end %>
-         <p>説明:<%= genre.instruction %></p>
+         <p>説明:<br /><%= genre.instruction %></p>
       </div>
     </div>
     <% end %>
