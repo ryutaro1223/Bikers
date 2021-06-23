@@ -9,13 +9,18 @@
      <h4>Picture</h4>
      <p><%= f.attachment_field :image, placeholder: "画像選択" %></p>
      <h4>Jenre</h4>
-     <%= form_with model: @genre, local: true do |f| %>
-      <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name ) do |genre|%>
-         <%= genre.label do %>
-          <%= genre.check_box %>
-         <% end %>
+    <div class="field">
+    <% Genre.all.each do |genre| %>
+        <% if action_name == 'new' || action_name == 'create' %>
+          <%= f.check_box :genre_ids, { multiple: true, checked: genre[:checked], disabled: genre[:disabled], include_hidden: false}, genre[:id], "" %>
+          <label><%= genre.name %></label>
+        <% elsif action_name == 'edit' || action_name == 'update' %>
+          <%= f.check_box :genre_ids, { multiple: true, checked: @post.genre_ids.include?(genre.id), disabled: genre[:disabled], include_hidden: false}, genre[:id], "" %>
+          <label><%= genre.name %></label>
+        <% end %>
       <% end %>
-     <% end %>
+    </div>
+
     <h4>Title</h4>
     <%= f.text_field :post_name %>
     <h4>Caption</h4>

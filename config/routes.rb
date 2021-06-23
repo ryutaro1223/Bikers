@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   root to: 'homes#top'
-
+  # 問い合わせフォーム用
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
   devise_for :users
   get "home/about", to: "homes#about"
   get 'search' => 'posts/search'
