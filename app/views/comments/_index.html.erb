@@ -1,0 +1,20 @@
+<% comments.each do |c| %>
+  <div>
+    <a href="/users/<%= c.user.id %>"><%= c.user.name %></a>
+    <%= c.comment_content %>
+    <% if c.user.id == current_user.id %>
+      <br>
+      投稿日：<%= c.created_at.strftime("%Y-%m-%d %H:%M")  %>
+        <%= link_to post_comment_path(c.post_id, c.id), method: :delete, remote: true, data: {confirm: "削除しますか？"} do %>
+          <span class="panel-icon">
+            <i class="fas fa-trash"></i>
+          </span>
+        <% end %>
+      <hr>
+    <% else %>
+      <br>
+        投稿日：<%= c.created_at.strftime("%Y-%m-%d %H:%M") %>
+      <hr>
+    <% end %>
+  </div>
+<% end %>

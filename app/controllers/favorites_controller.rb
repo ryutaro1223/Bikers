@@ -3,15 +3,11 @@ class FavoritesController < ApplicationController
     @post = Post.find(params[:post_id])
     @favorite = current_user.favorites.create(post_id: params[:post_id])
     @favorite.save
-    redirect_to post_path(@post)
-
   end
 
   def destroy
     @post = Post.find(params[:post_id])
     @favorite = current_user.favorites.find_by(post_id: params[:post_id])
     @favorite.destroy
-    redirect_to post_path(@post)
-
   end
 end

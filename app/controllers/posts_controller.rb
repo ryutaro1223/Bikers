@@ -14,13 +14,13 @@ class PostsController < ApplicationController
   # ページネーションを追加
   @posts = Post.all.page(params[:page]).per(5)
   # @post = Post.search(params[:search])
-  # @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
+  # @all_ranks = Post.create_all_ranks
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
-    @comment = current_user.comments.new
+    @comment = Comment.new
+    @comments = @post.comments.order(created_at: :desc)
     @favorites = @post.favorites
 
   end

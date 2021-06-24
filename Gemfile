@@ -70,8 +70,10 @@ gem 'kaminari'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
-end 
+end
 
 group :development do
   gem 'letter_opener_web', '~> 1.0'
 end
+
+gem 'pry-rails'

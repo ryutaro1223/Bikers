@@ -11,6 +11,10 @@ class Post < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  # def self.create_all_ranks
+  #   Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
+  # end
+
   def self.search(keyword)
     if search
     Post.where(["post_name like? OR caption like?", "%#{keyword}%", "%#{keyword}%"])
