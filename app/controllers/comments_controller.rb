@@ -4,16 +4,15 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
-    if @comment.save
+    @comment.save
+    #binding.irb
       render :index
-    end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.destroy
+    @comment.destroy
       render :index
-    end
   end
 
   private

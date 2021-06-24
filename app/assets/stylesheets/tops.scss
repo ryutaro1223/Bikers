@@ -1,0 +1,39 @@
+＊ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background-image: image-url('bike2.jpg');
+  height: 900px;
+  background-size:cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:375px) and (max-width:768px) {
+  .main {
+    background-size: contain;
+    height: 250px;
+  }
+
+  .main strong {
+    font-size: 50px;
+  }
+}
+
+.main h1 {
+ text-align: center;
+ margin-top: 0;
+}
+
+strong {
+  color:white;
+  font-size: 140px;
+  font-family: 'Lobster', cursive;
+}
+
+.main h5 {
+  color: #fff
+}

@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(5)
     @favorites = @post.favorites
 
   end

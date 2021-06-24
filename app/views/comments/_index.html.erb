@@ -1,20 +1,28 @@
-<% comments.each do |c| %>
-  <div>
-    <a href="/users/<%= c.user.id %>"><%= c.user.name %></a>
-    <%= c.comment_content %>
-    <% if c.user.id == current_user.id %>
-      <br>
-      投稿日：<%= c.created_at.strftime("%Y-%m-%d %H:%M")  %>
-        <%= link_to post_comment_path(c.post_id, c.id), method: :delete, remote: true, data: {confirm: "削除しますか？"} do %>
-          <span class="panel-icon">
-            <i class="fas fa-trash"></i>
-          </span>
-        <% end %>
-      <hr>
-    <% else %>
-      <br>
-        投稿日：<%= c.created_at.strftime("%Y-%m-%d %H:%M") %>
-      <hr>
-    <% end %>
-  </div>
+<li class="comment-create">
+    <h3 class="text-left title">Comments</h3>
+</li>
+
+<%= comments.count %>件コメント
+<% comments.each do |comment| %>
+    <li class="comment-container">
+        <div class="comment-box">
+            <div class="comment-avatar">
+                <p><%= attachment_image_tag comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image", size: "40x40" %></p>
+            </div>
+            <div class="comment-text">
+                <p><%= link_to "#{comment.user.name}", users_path(comment.user.id) %></p>
+                <div class="comment-entry">
+                    <%= comment.comment_content %>
+                    <% if comment.user == current_user %>
+                        <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                            <i class="fas fa-trash" style="color: black;"></i>
+                        <% end %>
+                    <% end %>
+                </div>
+                <span class="comment-date pull-right">
+                      <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                </span>
+            </div>
+        </div>
+    </li>
 <% end %>

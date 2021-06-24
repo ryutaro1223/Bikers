@@ -1,55 +1,60 @@
-<div class="post-show">
-  <head>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
-  </head>
-  <%= attachment_image_tag @post, :image, size: "400x370", format:'jpg', fallback:"no-img.jpg" %>
-  <div class ="post-show2">
-    <div class="post-time">
-      <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-    </div>
-    <% @post.genres.each do |genre| %>
-      #<%= genre.name %>
-    <% end %>
-    <!--%= render '/users/info', user: @user %-->
-    <div class="post-img">
-      <%= attachment_image_tag @post.user, :profile_image, size:"30x30", fallback: "no-img.jpg" %>
-    </div>
-
-    <div id="favorites_buttons_<%= @post %>">
-      <%= render partial: 'favorites/favorite', locals: { post: @post} %>
-    </div>
-
-    <div class="post-usr-name">
-      <p><%= @post.user.name %></p>
-    </div>
-
-    <div class="post-name">
-      <p><%= @post.post_name %></p>
-    </div>
-
-    <div class="post-caption">
-      <p><%= @post.caption %></p>
-    </div>
-    
-    <div class="post-delete">
-      <% if @post.user == current_user %>
-      <%= link_to "削除", post_path(@post), method: :delete %>
+<div class="show-all">
+  <div class="post-show">
+    <head>
+      <link rel="stylesheet" href="posts.scss" />
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+    </head>
+    <%= attachment_image_tag @post, :image, size: "400x370", format:'jpg', fallback:"no-img.jpg" %>
+    <div class ="post-show2">
+      <div class="post-time">
+        <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+      </div>
+      <% @post.genres.each do |genre| %>
+        #<%= genre.name %>
       <% end %>
-    </div>
-    </div>
+      <!--%= render '/users/info', user: @user %-->
+      <div class="post-img">
+        <%= attachment_image_tag @post.user, :profile_image, size:"30x30", fallback: "no-img.jpg" %>
+      </div>
 
-    <div class="comments">
-    <h2>Comments</h2>
-        <div class="comments_index">
-          <div id='comments_area'>
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
-          </div>
-        </div>
-        <% if user_signed_in? %>
-          <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+      <br /><br /><div id="favorites_buttons_<%= @post.id %>">
+        <%= render partial: 'favorites/favorite', locals: { post: @post} %>
+      </div>
+
+      <div class="post-usr-name">
+        <p><%= @post.user.name %></p>
+      </div>
+
+      <div class="post-name">
+        <p><%= @post.post_name %></p>
+      </div>
+
+      <div class="post-caption">
+        <p><%= @post.caption %></p>
+      </div>
+
+      <div class="post-delete">
+        <% if @post.user == current_user %>
+        <%= link_to "削除", post_path(@post), method: :delete %>
         <% end %>
+      </div>
     </div>
-</div>
+  </div>
+  </div>
+      <div class="row">
+      <ul style="list-style: none;"  id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </ul>
+
+        <% if user_signed_in? %>
+            <div class="comment-create">
+              <h3 class="text-left">Post Comment</h3>
+              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+            </div>
+        <% end %>
+        <%= paginate @comments %>
+     </div>
+
 
