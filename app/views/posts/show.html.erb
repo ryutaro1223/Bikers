@@ -14,7 +14,6 @@
       <% @post.genres.each do |genre| %>
         #<%= genre.name %>
       <% end %>
-      <!--%= render '/users/info', user: @user %-->
       <div class="post-img">
         <%= attachment_image_tag @post.user, :profile_image, size:"30x30", fallback: "no-img.jpg" %>
       </div>
