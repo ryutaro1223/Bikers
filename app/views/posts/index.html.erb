@@ -1,10 +1,4 @@
 <div class="index-all">
-  <div class="search-form">
-    <%= form_with url: search_path, method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, value: @keyword %>
-      <%= f.submit "検索" %>
-    <% end %>
-  </div>
   <div class="post-index">
     <% @posts.each do |post| %>
     <div class="post-index2">
