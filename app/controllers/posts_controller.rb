@@ -13,8 +13,7 @@ class PostsController < ApplicationController
   def index
   # ページネーションを追加
   @posts = Post.all.page(params[:page]).per(5)
-  # @post = Post.search(params[:search])
-  # @all_ranks = Post.create_all_ranks
+
   end
 
   def show
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:keyword])
-    @keyword = params[:keyword]
+    @posts = @posts.page(params[:page])
     render "index"
   end
 

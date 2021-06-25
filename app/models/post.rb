@@ -15,9 +15,9 @@ class Post < ApplicationRecord
   #   Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
   # end
 
-  def self.search(keyword)
+  def self.search(search)
     if search
-    Post.where(["post_name like? OR caption like?", "%#{keyword}%", "%#{keyword}%"])
+    Post.where(["post_name like? OR caption like?", "%#{search}%", "%#{search}%"])
     else
       Post.all
     end
