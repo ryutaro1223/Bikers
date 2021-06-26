@@ -7,13 +7,13 @@ class Post < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :likes, source: :user
+
+  validates :post_name, presence: true, length: {maximum: 50 }
+  validates :caption, presence: true, length: {maximum: 150 }
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-
-  # def self.create_all_ranks
-  #   Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
-  # end
 
   def self.search(search)
     if search

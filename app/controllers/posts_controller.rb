@@ -6,8 +6,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to posts_path
+    if @post.save
+      flash[:notice] = "Post was successfully created. "
+      redirect_to posts_path
+    else
+      flash.now[:alert] = "Post was not successfully created."
+      redirect_to new_post_path
+    end
   end
 
   def index
@@ -19,7 +24,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(5)
+    @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(3)
     @favorites = @post.favorites
 
   end
