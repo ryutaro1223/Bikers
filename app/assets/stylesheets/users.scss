@@ -12,6 +12,7 @@ h1, h2 {
   text-align: center;
 }
 .profile_image {
+  margin-left: 15px;
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
   width: 100px;
   height: 100px;
@@ -34,6 +35,8 @@ h1, h2 {
 
 .post-index2 {
   background-color: #fff;
+  margin-top: 100px;
+  margin-bottom: 0;
 }
 
 .post-index {
