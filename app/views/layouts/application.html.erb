@@ -30,11 +30,15 @@
               <a><%= link_to"MyPage",user_path(current_user.id) %></a>
             </li>
             <li><a href="/users">Bikers</a></li>
+            <% if user_signed_in? && current_user.admin? %>
+              <li><a href="/letter_opener">問い合わせ内容一覧</a></li>
+            <% end %>
         <% else %>
             <li><a href="/">TopPage</a></li>
             <li><a href="/home/about">OverView</a></li>
             <li><a href="/users/sign_up">Sign up</a></li>
             <li><a href="/users/sign_in">Sign in</a></li>
+
 
 
         <% end %>
