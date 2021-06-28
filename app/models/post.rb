@@ -17,7 +17,7 @@ class Post < ApplicationRecord
 
   def self.search(search)
     if search
-    Post.where(["post_name like? OR caption like?", "%#{search}%", "%#{search}%"])
+    @results = Post.joins(:genres).where(["post_name like? OR caption like? OR name like? ", "%#{search}%", "%#{search}%", "%#{search}%"])
     else
       Post.all
     end

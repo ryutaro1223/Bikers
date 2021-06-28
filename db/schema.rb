@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 2021_06_28_053728) do
     t.datetime "remember_created_at"
     t.string "name"
     t.string "profile_image_id"
-    t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
