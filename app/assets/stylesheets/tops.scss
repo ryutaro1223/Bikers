@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 
-@media screen and (min-width:375px) and (max-width:768px) {
+@media screen and (min-width:375px) and (max-width:450px) {
   .main {
     background-size: contain;
     height: 250px;
@@ -21,6 +21,10 @@
   .main strong {
     font-size: 50px;
   }
+
+  .dialogue {
+  font-size: 10px;
+}
 }
 
 .main h1 {
@@ -33,6 +37,27 @@ strong {
   font-size: 140px;
   font-family: 'Lobster', cursive;
 }
+
+.dialogue {
+  margin-top: 22px;
+  color:white;
+  font-size: 40px;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  animation-name: fadeIn;
+  animation-duration: 3.0s;
+  animation-iteration-count: 1;
+}
+  @keyframes fadeIn{
+   from {
+    opacity: 0;
+    transform: translateY(20px);
+   }
+   to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
 
 
 
