@@ -73,6 +73,7 @@ gem 'kaminari'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do
