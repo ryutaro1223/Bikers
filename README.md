@@ -17,7 +17,7 @@
 バイクに関する質問を投稿
 
 ## 設計書
-作成中
+https://docs.google.com/spreadsheets/d/1azjE62BNOlV-UAx26HiveQ3DBej_sJEUeAv3Pnwlvuk/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1Pxu-nds5NGVM_MV6a6dLXUe3VfvFu-RjZRFMxgjlf3M/edit?usp=sharing
