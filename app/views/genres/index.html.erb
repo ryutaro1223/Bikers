@@ -5,8 +5,8 @@
   </head>
     <h1>Jenres</h1>
     <% @genres.each do |genre| %>
-    <div class="genre-index2">
-      <div class="genre-index3">
+    <div class="genre-index-all">
+      <div class="genre-index-details">
         <%= link_to genre_path(genre.id) do %>
          <p>ジャンル名:<%= genre.name %></p>
         <% end %>

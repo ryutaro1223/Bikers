@@ -9,7 +9,7 @@
   font-family: 'Lobster', cursive;
 }
 
-.genre-index2 {
+.genre-index-all {
   display: inline-flex;
   opacity: 0.6;
   border: 1px #fff solid;
@@ -19,11 +19,11 @@
   margin-bottom: 5px;
 }
 
-.genre-index3 {
+.genre-index-details {
   display: inline-block;
 }
 
-.genre-index3 p {
+.genre-index-details p {
   color: #fff;
   opacity: 1.5;
 }
