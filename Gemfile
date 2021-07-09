@@ -79,5 +79,6 @@ end
 group :development do
   gem 'letter_opener_web', '~> 1.0'
 end
-
+# For 5.0.x, 5.1.x and 5.2.x
+gem 'rails-i18n', '~> 5.1'
 gem 'pry-rails'
